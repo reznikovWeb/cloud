@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8bbd71e9-22db-4e58-b0df-f61d028b69ac" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="2BtMJ2HxaiQlWduADE676uTHH3u" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Web\pet\cloud\server\node_modules\prettier" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+    <property name="ts.external.directory.path" value="C:\Web\pet\cloud\client\node_modules\typescript\lib" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Web\pet\cloud\server" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bbd71e9-22db-4e58-b0df-f61d028b69ac" name="Default Changelist" comment="" />
+      <created>1657720853042</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1657720853042</updated>
+      <workItem from="1657720854113" duration="2057000" />
+      <workItem from="1657722942579" duration="2671000" />
+      <workItem from="1657733341304" duration="2626000" />
+      <workItem from="1657736379521" duration="3563000" />
+      <workItem from="1657788284006" duration="5123000" />
+      <workItem from="1657826751962" duration="3060000" />
+      <workItem from="1657872880612" duration="1762000" />
+      <workItem from="1657877633761" duration="2180000" />
+      <workItem from="1658062758891" duration="827000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="396" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1658063104963">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="396" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1658063104963" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1657721392699">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1657721392699" />
+    <state x="440" y="95" key="FileChooserDialogImpl" timestamp="1657875353623">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="440" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1657875353623" />
+    <state x="161" y="0" key="SettingsEditor" timestamp="1657724215939">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="161" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1657724215939" />
+    <state x="10" y="97" width="939" height="437" key="dock-window-1" timestamp="1657810058472">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="10" y="97" width="939" height="437" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1657810058472" />
+  </component>
+</project>
