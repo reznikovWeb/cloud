@@ -3,7 +3,6 @@ const User = require("../models/User");
 const router = new Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const config = require("config");
 const { check, validationResult } = require("express-validator");
 
 // POST запрос по URL - /registration
@@ -73,7 +72,7 @@ router.post(
       }
 
       // Если и пароли совпали, тогда генерируем токен
-      const token = jwt.sign({ id: user.id }, config.get("secretKey"), {
+      const token = jwt.sign({ id: user.id }, process.env.SECRET_KEY, {
         expiresIn: "1h",
       });
 
