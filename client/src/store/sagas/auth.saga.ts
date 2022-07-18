@@ -6,10 +6,10 @@ import {
   PutEffect,
   takeLatest,
 } from "@redux-saga/core/effects";
-import { getUserRoutine } from "../store/authSlice";
-import { login } from "../api/auth";
+import { getAuthRoutine, getUserRoutine } from "../authSlice";
+import { auth, login } from "../../api/auth";
 import { AnyAction } from "@reduxjs/toolkit";
-import { IUser } from "../api/types";
+import { IUser } from "../../api/types";
 
 type Data = {
   token: string;
@@ -30,6 +30,22 @@ export function* getUser(
   }
 }
 
+export function* getAuth(): Generator<CallEffect<Data> | PutEffect<AnyAction>> {
+  try {
+    yield put(getAuthRoutine.request());
+    const data = yield call(auth);
+    yield put(getAuthRoutine.success(data));
+  } catch (e) {
+    yield put(getAuthRoutine.failure(e));
+    localStorage.removeItem("token");
+  } finally {
+    yield put(getAuthRoutine.fulfill());
+  }
+}
+
 export default function* authWatcher() {
-  yield all([takeLatest(getUserRoutine.TRIGGER, getUser)]);
+  yield all([
+    takeLatest(getUserRoutine.TRIGGER, getUser),
+    takeLatest(getAuthRoutine.TRIGGER, getAuth),
+  ]);
 }

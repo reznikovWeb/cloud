@@ -30,3 +30,12 @@ export const login = async ({
 
   return response.data;
 };
+
+export const auth = async () => {
+  const response = await axios.get(`http://localhost:5000/api/auth/auth`, {
+    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+  });
+  localStorage.setItem("token", response.data.token);
+
+  return response.data;
+};

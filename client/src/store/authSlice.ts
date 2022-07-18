@@ -20,6 +20,7 @@ const initialState: AuthState = {
 };
 
 export const getUserRoutine = createRoutine("auth/getUser");
+export const getAuthRoutine = createRoutine("auth/getAuth");
 
 const authSlice = createSlice({
   name: "auth",
@@ -38,6 +39,21 @@ const authSlice = createSlice({
       state.error = action.payload;
     },
     [getUserRoutine.FULFILL]: (state) => {
+      state.loading = false;
+    },
+
+    [getAuthRoutine.REQUEST]: (state) => {
+      state.error = null;
+      state.loading = true;
+    },
+    [getAuthRoutine.SUCCESS]: (state, action) => {
+      state.token = action.payload.token;
+      state.user = action.payload.user;
+    },
+    [getAuthRoutine.FAILURE]: (state, action) => {
+      state.error = action.payload;
+    },
+    [getAuthRoutine.FULFILL]: (state) => {
       state.loading = false;
     },
   },

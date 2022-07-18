@@ -18,6 +18,7 @@ const PORT = process.env.PORT;
 // Запускаем сервер и подключаемся к базе данных
 // Подключение к базе данных - асинхронное, поэтому функция асинхронная
 const start = async () => {
+
   try {
     await mongoose.connect(process.env.DB_URL);
 

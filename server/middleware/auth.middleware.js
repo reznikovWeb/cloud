@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
 
     try {
         // Забираем token из get запроса
-        const token = req.headers.authorization.split('')[1];
+        const token = req.headers.authorization.split(' ')[1];
         // Проверяем есть ли token
         if (!token) {
             return res.status(401).json({message: 'Auth error'})

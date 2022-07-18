@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import createSagaMiddleware from 'redux-saga';
 import { authReducer } from "./authSlice";
-import rootSaga from "../sagas/root.saga";
+import rootSaga from "./sagas/root.saga";
 
 const rootReducer = combineReducers({
   auth: authReducer,
@@ -17,3 +17,5 @@ const store = configureStore({
 sagaMiddleware.run(rootSaga);
 
 export default store;
+
+export type RootState = ReturnType<typeof store.getState>;
