@@ -5,6 +5,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const {check, validationResult} = require("express-validator");
 const authMiddleware = require('../middleware/auth.middleware')
+// Импорты связанный с файлами
+const fileService = require('../services/fileService')
+const File = require('../models/File')
 
 // POST запрос по URL - /registration
 router.post(
@@ -39,6 +42,7 @@ router.post(
             const hashPassword = await bcrypt.hash(password, 8); // hash password
             const user = new User({email, password: hashPassword}); // Запишем данные в нашу модель
             await user.save(); // сохраняем юзера в базу данных
+            await fileService.createDir(new File({user: user.id, name: ''}))
 
             // Возвращаем ответ от сервера
             return res.json({message: "User was created"});
