@@ -42,7 +42,7 @@ router.post(
             const hashPassword = await bcrypt.hash(password, 8); // hash password
             const user = new User({email, password: hashPassword}); // Запишем данные в нашу модель
             await user.save(); // сохраняем юзера в базу данных
-            await fileService.createDir(new File({user: user.id, name: ''}))
+            await fileService.createDir(new File({user: user.id, name: ''})) // Папка будет с именем - id пользователя
 
             // Возвращаем ответ от сервера
             return res.json({message: "User was created"});

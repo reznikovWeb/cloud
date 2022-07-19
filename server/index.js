@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Подключаем роуты
 app.use("/api/auth", authRouter);
-app.use("/api/file", fileRouter);
+app.use("/api/files", fileRouter);
 // Получаем порт на котором будет работать сервер
 const PORT = process.env.PORT;
 
