@@ -32,10 +32,13 @@ export const login = async ({
 };
 
 export const auth = async () => {
-  const response = await axios.get(`http://localhost:5000/api/auth/auth`, {
-    headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-  });
-  localStorage.setItem("token", response.data.token);
+  const tokenFromLocalStorage = localStorage.getItem("token");
 
-  return response.data;
+  if (tokenFromLocalStorage) {
+    const response = await axios.get(`http://localhost:5000/api/auth/auth`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+    });
+    localStorage.setItem("token", response.data.token);
+    return response.data;
+  }
 };

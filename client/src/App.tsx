@@ -1,38 +1,44 @@
-import React, {useEffect} from "react";
-import {Route, Routes, useNavigate} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
 import styles from "./App.module.scss";
-import {useDispatch, useSelector} from "react-redux";
-import {getAuthRoutine} from "./store/authSlice";
-import {tokenSelector} from "./store/selectors/auth.selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { getAuthRoutine } from "./store/authSlice";
+import {
+  authLoadingSelector,
+  tokenSelector,
+} from "./store/selectors/auth.selectors";
+import Disk from "./pages/Disk/Disk";
 
 function App() {
-    const token = useSelector(tokenSelector);
+  const token = useSelector(tokenSelector);
+  const authLoading = useSelector(authLoadingSelector);
 
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  console.log(authLoading);
+  useEffect(() => {
+    dispatch(getAuthRoutine());
+  }, []);
 
-    const navigate = useNavigate();
+  return (
+    <div className={styles.app}>
+      {token ? (
+        <Routes>
+          <Route path="/disk" element={<Disk />} />
 
-    useEffect(() => {
-        dispatch(getAuthRoutine());
-    }, []);
+          <Route path="*" element={<Navigate to="/disk" replace />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/login" element={<Login />} />
 
-    useEffect(() => {
-        if (token) {
-            navigate("/registration");
-        }
-
-    }, [token]);
-
-    return (
-        <div className={styles.app}>
-            <Routes>
-                <Route path="/registration" element={<Registration/>}/>
-                <Route path="/" element={<Login/>}/>
-            </Routes>
-        </div>
-    );
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      )}
+    </div>
+  );
 }
 
 export default App;

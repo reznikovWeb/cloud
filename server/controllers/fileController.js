@@ -37,7 +37,7 @@ class fileController {
         user: req.user.id,
         parent: req.query.parent,
       });
-      return res.json({ files });
+      return res.json(files);
     } catch (e) {
       console.log(e);
       return res.status(500).json({ message: "Can not get files" });

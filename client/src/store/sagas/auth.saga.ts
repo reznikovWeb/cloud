@@ -8,7 +8,6 @@ import {
 } from "@redux-saga/core/effects";
 import { getAuthRoutine, getUserRoutine } from "../authSlice";
 import { auth, login } from "../../api/auth";
-import { AnyAction } from "@reduxjs/toolkit";
 import { IUser } from "../../api/types";
 
 type Data = {
@@ -18,7 +17,7 @@ type Data = {
 
 export function* getUser(
   action: ReturnType<typeof getUserRoutine.trigger>
-): Generator<CallEffect<Data> | PutEffect<AnyAction>> {
+): Generator<CallEffect<Data> | PutEffect> {
   try {
     yield put(getUserRoutine.request());
     const data = yield call(login, action.payload);
@@ -30,7 +29,7 @@ export function* getUser(
   }
 }
 
-export function* getAuth(): Generator<CallEffect<Data> | PutEffect<AnyAction>> {
+export function* getAuth(): Generator<CallEffect<Data> | PutEffect> {
   try {
     yield put(getAuthRoutine.request());
     const data = yield call(auth);
