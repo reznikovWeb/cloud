@@ -1,11 +1,12 @@
-
 .app {
-  background-image: url("./images/login_bg.jpg");
+  //background-image: url("assets/images/login_bg.jpg");
+  background-color: var(--color-grey-200);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0 0;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
 
 
   &__container{

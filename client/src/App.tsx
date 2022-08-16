@@ -13,30 +13,43 @@ import Disk from "./pages/Disk/Disk";
 
 function App() {
   const token = useSelector(tokenSelector);
-  const authLoading = useSelector(authLoadingSelector);
+  // const authLoading = useSelector(authLoadingSelector);
 
   const dispatch = useDispatch();
-  console.log(authLoading);
+  const navigate = useNavigate();
+
   useEffect(() => {
     dispatch(getAuthRoutine());
   }, []);
 
+  useEffect(() => {
+    if (token) {
+      navigate("/disk");
+    }
+  }, [token]);
+
+
+
   return (
     <div className={styles.app}>
-      {token ? (
-        <Routes>
-          <Route path="/disk" element={<Disk />} />
+      <Routes>
+        {token && (
+          <>
+            <Route path="/disk" element={<Disk />} />
+            <Route path="*" element={<Navigate to={"/disk"} />} />
+          </>
+        )}
 
-          <Route path="*" element={<Navigate to="/disk" replace />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route path="/registration" element={<Registration />} />
-          <Route path="/login" element={<Login />} />
+        {!token && (
+          <>
+            <Route path="/registration" element={<Registration />} />
 
-          <Route path="*" element={<Navigate to="/login" replace />} />
-        </Routes>
-      )}
+            <Route path="/login" element={<Login />} />
+
+            <Route path="*" element={<Navigate to={"/login"} />} />
+          </>
+        )}
+      </Routes>
     </div>
   );
 }

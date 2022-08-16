@@ -6,8 +6,8 @@ import {
   PutEffect,
   takeLatest,
 } from "@redux-saga/core/effects";
-import { getFilesRoutine } from "../fileSlice";
-import { getFiles } from "../../api/files";
+import { createFolderRoutine, getFilesRoutine, IFile } from "../fileSlice";
+import { createDir, getFiles } from "../../api/files";
 
 export function* getFilesSaga(
   action: ReturnType<typeof getFilesRoutine.trigger>
@@ -23,6 +23,23 @@ export function* getFilesSaga(
   }
 }
 
+export function* createFolderSaga(
+  action: ReturnType<typeof createFolderRoutine.trigger>
+): Generator<CallEffect | PutEffect> {
+  try {
+    yield put(createFolderRoutine.request());
+    const data = yield call(createDir, action.payload);
+    yield put(createFolderRoutine.success(data));
+  } catch (e) {
+    yield put(createFolderRoutine.failure(e));
+  } finally {
+    yield put(createFolderRoutine.fulfill());
+  }
+}
+
 export default function* filesWatcher() {
-  yield all([takeLatest(getFilesRoutine.TRIGGER, getFilesSaga)]);
+  yield all([
+    takeLatest(getFilesRoutine.TRIGGER, getFilesSaga),
+    takeLatest(createFolderRoutine.TRIGGER, createFolderSaga),
+  ]);
 }

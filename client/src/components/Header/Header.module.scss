@@ -1,0 +1,27 @@
+.header{
+  background-color: var(--color-purple-500);
+  padding: 10px 0;
+  &__container{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+
+  &__content{
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon{
+    width: 100px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+  }
+
+  &__text{
+    font-size: 32px;
+    color: white;
+
+  }
+}

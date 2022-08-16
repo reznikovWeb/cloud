@@ -1,0 +1,14 @@
+.disk {
+  padding: 20px 5px ;
+  max-width: 1200px;
+  margin: 0 auto;
+
+
+  &__btns{
+    display: flex;
+  }
+
+  &__create{
+    margin-left: 10px;
+  }
+}

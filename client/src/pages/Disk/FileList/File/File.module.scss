@@ -1,0 +1,31 @@
+.file {
+  margin: 10px 0;
+  background-color: var(--color-white);
+  display: grid;
+  padding: 5px 0;
+  border-radius: 15px;
+  grid-template-columns: 1fr 4fr repeat(4, 1fr);
+  align-items: center;
+
+  &__name {
+    grid-column-start: 2;
+  }
+
+  &__date {
+    grid-column-start: 5;
+    justify-self: center;
+  }
+
+  &__size {
+    grid-column-start: 6;
+    justify-self: center;
+  }
+  &__img {
+    width: 40px;
+    object-fit: cover;
+    justify-self: center;
+  }
+
+  &__name {
+  }
+}
